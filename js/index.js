@@ -3,28 +3,51 @@ $(document).ready(function(){
 	const show = {"display" : "block"};
 	const hide = {"display" : "none"};
 
-	function home() {
+	function AllHide() {
+		$(".intro").css(hide);
+		$(".slide_wrapper").css(hide);
+		$(".main_banner").css(hide);
 		$(".login_form").css(hide);
 		$(".npoint").css(hide);
 		$(".Back_affiliate").css(hide);
+		$(".calendar").css(hide);
+		$(".studecouncil").css(hide);
+		$(".footer").css(hide);
+	};
+
+	function home() {
+		AllHide();
 		$(".intro").css(show);
-		$(".banner").css(show);
+		$(".main_banner").css(show);
 		$(".slide_wrapper").css(show);
 		$(".footer").css(show);
 	};
 	
 	function GoToPoint() {
+		AllHide();
 		$(".login_form").css({"display" : "flex"});
-		$(".intro").css(hide);
-		$(".banner").css(hide);
-		$(".slide_wrapper").css(hide);
-		$(".footer").css(hide);
-	}
+	};
+
+	function GoToaffilate() {
+		AllHide();
+		$(".Back_affiliate").css(show);
+	};
+
+	function GoTocalendar() {
+		AllHide();
+		$(".calendar").css(show);
+	};
+
+	function GoTostudecouncil() {
+		AllHide();
+		$(".studecouncil").css(show);
+	};
 
 	$(".close_btn").click(home);
-	$(".ud_home").click(home);
 	$(".point").click(GoToPoint);
-	$(".ud_point").click(GoToPoint);
+	$(".affilate").click(GoToaffilate);
+	$(".calendar_banner").click(GoTocalendar);
+	$(".studecouncil_banner").click(GoTostudecouncil);
 
 	var id = $('#id');
 	var pw = $('#pw');
